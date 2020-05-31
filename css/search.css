@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.search{
+    text-align: center;
+}
+.search input{
+    border: 1px solid #b6b6b6;
+    width:500px;
+    height:36px;
+    font-size:20px;
+}
+.search input[type="submit"]{
+    width: 150px;
+    height: 38px;
+    padding: 0;
+    margin: 0;
+}
+h1{
+    color: rgb(77, 75, 75);
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom:30px ;
+    font-family: Bradley Hand;
+    font-weight:1000;
+    font-size: 60px;
+}
