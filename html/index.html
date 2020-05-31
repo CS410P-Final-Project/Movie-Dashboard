@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>MovieDashboard</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
 
 <body>
@@ -12,15 +12,15 @@
     <section id="navbar" name="navbar"> 
         <ul> 
             <h2>MOVIE</h2>
-            <a href="#"><img src="./images/home.png"/>Home</a>
-            <a href="#"><img src="./images/movie.png"/>Movie</a>
+            <a href="#"><img src="../images/home.png"/>Home</a>
+            <a href="./search.html"><img src="../images/movie.png"/>Movie</a>
         </ul>
     </section>
 
     <!-- Search -->
     <div class="search">
         <div class="searchIcon">
-            <img src="./images/timg.png"/>
+            <img src="../images/timg.png"/>
         </div>
         <div class="searchText">
             <input type="text" placeholder="Please enter movie name" id="text">
@@ -28,14 +28,18 @@
         </div>
     </div>
 
-    <!-- Recommend Movie -->>
-    <section class="recommend">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
+    <!-- Recommend Movie -->
+    <section class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
     </section>
 
     <!--jquery, axios, movie.js-->
