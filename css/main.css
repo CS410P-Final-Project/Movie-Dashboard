@@ -6,7 +6,6 @@ body{
     background-color: whitesmoke;
 }
 
-
 /***********  Navbar  ***********/
 
 ul{
@@ -38,6 +37,7 @@ a{
 a:hover{
     background-color: lightblue;
 }
+
 img{
     position: relative;
     height: 18px;
@@ -48,28 +48,36 @@ img{
 
 /***********  Search Section  ***********/
 
-div.search{
+.search{
     margin-left: 18%;
     margin-top: 10px;
 }
-div.searchIcon{
+
+.searchIcon{
     margin: 0;
     display: inline-block;
     padding-top: 10px;
     height: 30px;
     width: 30px;
 }
-div.searchText{
+
+.searchText{
     display: inline-block;
 }
+
 .searchText input{
     margin: 0;
     border: 0;
     height:30px;   
     font-size: 15px; 
 } 
+
 .searchText input[type="text"]{
     width: 500px;
+}
+
+.searchText input[type="submit"]:hover{
+    background-color: lightblue;
 }
 
 /***********  Recommend Movies  ***********/
@@ -81,6 +89,7 @@ div.searchText{
     margin-left: 16%;
     margin-top: 20px;
 }
+
 .flex-item{
     width: 200px;
     height: 350px;
