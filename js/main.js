@@ -9,3 +9,7 @@ mailBtn.onclick=function sendMail(){
     return confirm('Do you want to send e-mail to the administrator for help?');
 }
 
+
+
+
+console.log("hello helloe helllll");
