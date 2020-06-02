@@ -10,6 +10,4 @@ mailBtn.onclick=function sendMail(){
 }
 
 
-
-
 console.log("hello helloe helllll");
