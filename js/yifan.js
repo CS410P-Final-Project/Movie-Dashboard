@@ -15,7 +15,7 @@ console.log("hello");
 
 const searchURL = 'http://www.omdbapi.com?s=';
 const idURL = 'http://www.omdbapi.com?i=';
-const myKey = '&apikey=bad1e2f';
+const myKey = '&apikey=45cdbd93';
 
 
 function getMovies(searchText) {
