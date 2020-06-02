@@ -12,28 +12,14 @@
 <body>
 
     <div class="logo">
-        <a href="./index.html" title="Back to home page">
-            <h1>Movie</h1>
+        <a href="./search.html" title="Back to Search page">
+            <h1>Back to Search</h1>
         </a>
     </div>
 
-    <div class="search">
-        <form id="searchForm" action="#" target="#">
-            <input type="text" class="form-control" id="searchText" placeholder=" Please enter movie name">
-            <br>
-            <input type="submit" value="Search" class="submit" href="#">
-            <input type="submit" value="Back" class="submit" onclick="goBack()">
-            <script>
-                function goBack() {
-                    window.location = 'index.html';
-                }
-            </script>
-        </form>
-
-    </div>
 
     <div class="container">
-        <div id="movies" class="row"></div>
+        <div id="movie" class="well"></div>
     </div>
 
 
@@ -42,6 +28,9 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/yifan.js"></script>
+    <script>
+        getMovie();
+    </script>
 
 </body>
 </html>

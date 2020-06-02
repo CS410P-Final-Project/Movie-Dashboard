@@ -43,3 +43,39 @@ h1{
 a{
     text-decoration: none;
 }
+
+.form-control{
+  margin:0 auto;
+}
+
+#movies img, #movie img{
+    width:100%;
+}
+
+@media(min-width:960px){
+  #movies .col-md-3 .well{
+    height:400 px;
+  }
+
+  #movies .col-md-3 img{
+    height:220 px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
