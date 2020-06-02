@@ -102,5 +102,11 @@ img{
 
 
 
+.flex-item img{
+    width: 180px;
+    height: 300px; 
+}
+
+
 
 
