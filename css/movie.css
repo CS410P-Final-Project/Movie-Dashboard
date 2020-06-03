@@ -1,3 +1,7 @@
+@font-face{
+    font-family:'starwar'; 
+    src:url('../font/Starjhol.ttf')
+}
 
 body{
     background:#222;
@@ -71,6 +75,7 @@ h5{
     margin-top: 5px;
     font-size: 40px;
     text-align: center;
+    font-family: "starwar";
 }
 /*
 #back:hover ~ #body{
