@@ -30,9 +30,9 @@ function getMovies(searchText) {
         results += `
             <div class="col-md-3">
               <div class="well text-center">
-                <img src="${movie.Poster}">
-                <h5>${movie.Title}</h5>
-                <a onclick = "movieSelected('${movie.imdbID}')" class="btn btn-primary" herf="#">Movie Details</a>
+                <img src="${movie.Poster}" id="movieImg" >
+                <h5 id="movieTitle">${movie.Title}</h5>
+                <a onclick = "movieSelected('${movie.imdbID}')" class="btn btn-primary" herf="#" id ="movieDetail">Movie Details</a>
               </div>
             </div>
           `;
@@ -59,7 +59,7 @@ function getMovie() {
       let movie = response.data;
 
       let onscreen = `
-              <div class = 'row'>
+              <div class = 'row' id = "information-area">
                 <div class = "col-md-4">
                   <img src="${movie.Poster}" class="img-thumbnail" alt="Responsive image">
                 </div>

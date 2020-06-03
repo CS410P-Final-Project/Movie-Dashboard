@@ -4,7 +4,14 @@
 }
 
 body{
-    background-color: whitesmoke;
+    background-color:black;
+    background-image: url(../images/DarthVader.png);
+    background-image: url(../images/Stromtroop.png);
+    background-image: url(../images/HanSolo.png);
+    background-image: url(../images/smoke.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100%;
 }
 
 .search{
@@ -60,6 +67,45 @@ a{
   #movies .col-md-3 img{
     height:220 px;
   }
+}
+
+/*result area*/
+.col-md-3{
+    background-color: white;
+    background-color: rgb(54,54,54);
+    background-color: transparent;
+    margin-top: 44px;
+}
+
+/*movie title*/
+#movieTitle{
+  margin-top: 8px;
+  margin-bottom: 5px;
+  color: azure;
+}
+
+/*movie img*/
+#movieImg{
+  width: 80%;
+  height: 300px;
+}
+
+/*movie detail*/
+#movieDetail{
+    margin-bottom: 4px;
+    color: rgb(252,153,5);
+    background-color: rgb(54,54,54);
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#movieDetail:hover{
+    color:rgb(245, 3, 124);
+}
+
+/*movie*/
+h1{
+    color: rgb(252,153,5);
 }
 
 
