@@ -108,7 +108,7 @@ async function setMovies() {
        // }
 
         i+=check;
-    } while (i < 9)
+    } while (i < 10)
 }
 
 setMovies();
@@ -119,7 +119,7 @@ function movieSelected(id) {
     window.location = 'movie.html';
     return false;
   }
-  
+ /* 
   function getMovie() {
     let movieId = sessionStorage.getItem('movieID');
   
@@ -164,8 +164,50 @@ function movieSelected(id) {
       });
   }
 
- 
-
+*/ 
+  function getMovie() {
+    let movieId = sessionStorage.getItem('movieID');
+  
+    axios.get(idURL + movieId + myKey)
+      .then((response) => {
+        console.log(response);
+        let movie = response.data;
+  
+        let onscreen = `
+                <div class = 'row' id = "information-area">
+                  <div class = "col-md-4">
+                    <img src="${movie.Poster}" class="img-thumbnail" alt="Responsive image">
+                  </div>
+                  <div class = "col-md-8">
+                    <h3>  ${movie.Title}</h3>
+                    <ul class="list-group">
+                      <li class="list-group-item"><strong>Genre: </strong> ${movie.Genre}</li>
+                      <li class="list-group-item"><strong>Released: </strong> ${movie.Released}</li>
+                      <li class="list-group-item"><strong>IMDB Rating: </strong> ${movie.imdbRating}</li>
+                      <li class="list-group-item"><strong>Director: </strong> ${movie.Director}</li>
+                      <li class="list-group-item"><strong>Writer: </strong> ${movie.Writer}</li>
+                      <li class="list-group-item"><strong>Actor: </strong> ${movie.Actors}</li>
+                     </ul>
+                  </div>
+                </div>
+                <div class = "row">
+                  <div class="well">
+                    <h3>Plot:</h3>
+                    <h5>    ${movie.Plot}<h5>
+                    <br>
+                    <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary" id="goIMDB">
+                    View Imdb Page
+                    </a>
+                  </div>
+                </div>
+        `;
+        $('#movie').html(onscreen);
+  
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
 
 
