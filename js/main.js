@@ -92,6 +92,11 @@ async function setMovies() {
             if (base.Poster != "N/A") {
                 check = 1;
                $('#recommendMovie'+i).attr('src', base.Poster);
+               $('#title'+i).text(base.Title);
+               let tohtml=`
+                 <button onclick = "movieSelected('${base.imdbID}')">Movie Details</button>
+               `;
+               $('#movie'+i).html(tohtml);
             }
             else {
                 check = 0;
@@ -107,5 +112,62 @@ async function setMovies() {
 }
 
 setMovies();
+
+
+function movieSelected(id) {
+    sessionStorage.setItem('movieID', id);
+    window.location = 'movie.html';
+    return false;
+  }
+  
+  function getMovie() {
+    let movieId = sessionStorage.getItem('movieID');
+  
+    axios.get(idURL + movieId + myKey)
+      .then((response) => {
+        console.log(response);
+        let movie = response.data;
+  
+        let onscreen = `
+                <div class = 'row'>
+                  <div class = "col-md-4">
+                    <img src="${movie.Poster}" class="img-thumbnail" alt="Responsive image">
+                  </div>
+                  <div class = "col-md-8">
+                    <h3>${movie.Title}</h2>
+                    <ul class="list-group">
+                      <li class="list-group-item"><strong>Genre: </strong> ${movie.Genre}</li>
+                      <li class="list-group-item"><strong>Released: </strong> ${movie.Released}</li>
+                      <li class="list-group-item"><strong>IMDB Rating: </strong> ${movie.imdbRating}</li>
+                      <li class="list-group-item"><strong>Director: </strong> ${movie.Director}</li>
+                      <li class="list-group-item"><strong>Writer: </strong> ${movie.Writer}</li>
+                      <li class="list-group-item"><strong>Actor: </strong> ${movie.Actors}</li>
+                     </ul>
+                  </div>
+                </div>
+                <br>
+                <br>
+                <div class = "row">
+                  <div class="well">
+                  <h3>Plot:</h3>
+                    ${movie.Plot}
+                    <br>
+                    <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View Imdb Page</a>
+                  </div>
+                </div>
+        `;
+        $('#movie').html(onscreen);
+  
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+ 
+
+
+
+
 
 
