@@ -29,7 +29,11 @@ function pad(number, length) {
 
 
 const idURL = 'http://www.omdbapi.com?i=tt';
-const myKey = '&apikey=45cdbd93';
+//const myKey = '&apikey=45cdbd93';
+//const myKey = '&apikey=bad1e2f';
+const myKey = '&apikey=bad1e2f';
+//const myKey = '&apikey=5097481f';
+
 var randomMovie = pad(Math.floor((Math.random() * 2155529) + 1), 7);
 
 console.log(randomMovie);

@@ -135,12 +135,13 @@ p{
 
 
 .menu-list {
-    position: absolute;
+   /* position: absolute;*/
 	list-style:none;
     width:0;
     height: 0;
     margin: 0;
     padding: 0;
+    margin-top: 0px;
     margin-left: 200px;
 }
 
@@ -163,9 +164,10 @@ p{
     animation-iteration-count:100;
 	line-height:60px;
     text-align:center;
-	font-size:15px;
+	font-size:21px;
 	color:#fff;
 }
+
 @keyframes myfirst {
 
 	0% {
