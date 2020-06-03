@@ -1,3 +1,7 @@
+@font-face{
+    font-family:'star'; 
+    src:url('../font/Starjedi.ttf')
+}
 *{
     margin: 0;
     padding: 0;
@@ -42,7 +46,7 @@ h1{
     text-align: center;
     margin-top: 100px;
     margin-bottom: 30px ;
-    font-family: Bradley Hand;
+    font-family: 'star';
     font-weight:1000;
     font-size: 60px;
 }
