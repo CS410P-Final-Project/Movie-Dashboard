@@ -64,7 +64,7 @@ function getMovie() {
                   <img src="${movie.Poster}" class="img-thumbnail" alt="Responsive image">
                 </div>
                 <div class = "col-md-8">
-                  <h3>${movie.Title}</h2>
+                  <h3>  ${movie.Title}</h3>
                   <ul class="list-group">
                     <li class="list-group-item"><strong>Genre: </strong> ${movie.Genre}</li>
                     <li class="list-group-item"><strong>Released: </strong> ${movie.Released}</li>
@@ -78,9 +78,11 @@ function getMovie() {
               <div class = "row">
                 <div class="well">
                   <h3>Plot:</h3>
-                  ${movie.Plot}
+                  <h5>    ${movie.Plot}<h5>
                   <br>
-                  <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View Imdb Page</a>
+                  <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary" id="goIMDB">
+                  View Imdb Page
+                  </a>
                 </div>
               </div>
       `;
