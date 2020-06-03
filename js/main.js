@@ -94,7 +94,7 @@ async function setMovies() {
                $('#recommendMovie'+i).attr('src', base.Poster);
                $('#title'+i).text(base.Title);
                let tohtml=`
-                 <button onclick = "movieSelected('${base.imdbID}')">Movie Details</button>
+                 <button class="MovieDetail"  onclick = "movieSelected('${base.imdbID}')">Movie Details</button>
                `;
                $('#movie'+i).html(tohtml);
             }
