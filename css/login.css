@@ -1,5 +1,7 @@
-
-
+@font-face{
+    font-family:'starwar'; 
+    src:url('../font/Starjhol.ttf')
+}
 *{
     margin: 0;
     padding: 0;
@@ -19,7 +21,7 @@ body{
     */
     padding: 50px;
     color: #ffe81f;
-    font-family: 'Star Jedi', arial;
+    font-family: 'starwar';
     font-weight:1000;
     font-size: 180%;
 }
@@ -56,10 +58,11 @@ body{
 	height: 30px;
 	background-color: #ffe81f;
 	border: none;
-	color: white;
+	color: black;
     font-size: 18px;
     margin: 20px;
     margin-top: 30px;
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 414px) {
