@@ -6,24 +6,29 @@
     <meta name=keywords content="">
     <meta name=description content="Welcome to find movie!">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link href="http://allfont.net/allfont.css?fonts=star-jedi" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <title>Login Page</title>
  
 </head>
 <body onLoad="document.getElementById('username').focus();GetCookie();">
 
-<div class="header">
-    <h1>Let's Find a Movie!</h1>
-</div>
+    <div class="header">
+        <h1>Let's Find a Movie!</h1>
+    </div>
 
-<form class="loginPage">
-    <input type="text" id="username" placeholder="Username" required>
-    <br>
-    <input type="password" id="password" placeholder="Password" required> 
-    <br>
-    <input type="checkbox" id="remember_password"/>remember password
-    <br>
-    <input type="button" id="enterBtn" OnClick="checkInCorrect()" value="Enter"/>    
-</form>
+    <form class="loginPage">
+   
+        <input type="text" id="username" placeholder="Username" required>
+        <br>
+        <input type="password" id="password" placeholder="Password" required> 
+        <br>
+        <input type="checkbox" id="remember_password"/> 
+        <label for="remember_password">Remember me</label>
+        <br>
+        <input type="button" id="enterBtn" OnClick="checkInCorrect()" value="Enter"/>    
+    </form>
 </body>
 <script src="../js/logout.js"></script>
+<script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
 </html>
