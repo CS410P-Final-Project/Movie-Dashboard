@@ -1,5 +1,6 @@
 .col-md-4{
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .well{
@@ -11,11 +12,17 @@
 }
 
 #goIMDB{
-    margin-top: 40px 
+    margin-top: 12px;
+    background-color: rgb(252, 153, 5);
+    border-color: rgb(54, 54, 54);
+}
+
+#goIMDB:hover {
+    text-decoration: underline;
 }
 
 body{
-    background-color:rgb(54, 54, 54);
+    background-color:black;
 }
 
 .logo{
@@ -34,4 +41,12 @@ h3{
 h5{
     color:white;
     margin-left: 20px;
+}
+
+#information-area{
+    background-color: rgb(29, 27, 27);
+    background-color:transparent;
+    border: 2px;
+    border-color: aliceblue;
+    border-color: transparent;
 }
