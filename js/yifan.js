@@ -1,12 +1,12 @@
 $(document).ready(() => {
-    $('#searchForm').on('submit', (e) => {
-        //console.log($('#searchText').val());
-        //Get the value from the input search area
-        let searchText = $('#searchText').val();
+  $('#searchForm').on('submit', (e) => {
+    //console.log($('#searchText').val());
+    //Get the value from the input search area
+    let searchText = $('#searchText').val();
 
-        getMovies(searchText);
-        e.preventDefault();
-    })
+    getMovies(searchText);
+    e.preventDefault();
+  })
 });
 
 
@@ -19,15 +19,15 @@ const myKey = '&apikey=45cdbd93';
 
 
 function getMovies(searchText) {
-    //console.log(searchText);
+  //console.log(searchText);
 
-    axios.get(searchURL + searchText + myKey)
-        .then((response) => {
-            console.log(response);
-            let movies = response.data.Search;
-            let results = ' ';
-            $.each(movies, (index, movie) => {
-                results += `
+  axios.get(searchURL + searchText + myKey)
+    .then((response) => {
+      console.log(response);
+      let movies = response.data.Search;
+      let results = ' ';
+      $.each(movies, (index, movie) => {
+        results += `
             <div class="col-md-3">
               <div class="well text-center">
                 <img src="${movie.Poster}">
@@ -36,31 +36,31 @@ function getMovies(searchText) {
               </div>
             </div>
           `;
-            });
-            $('#movies').html(results);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+      });
+      $('#movies').html(results);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 function movieSelected(id) {
-    sessionStorage.setItem('movieID', id);
-    window.location = 'movie.html';
-    return false;
+  sessionStorage.setItem('movieID', id);
+  window.location = 'movie.html';
+  return false;
 }
 
 function getMovie() {
-    let movieId = sessionStorage.getItem('movieID');
+  let movieId = sessionStorage.getItem('movieID');
 
-    axios.get(idURL + movieId + myKey)
-        .then((response) => {
-            console.log(response);
-            let movie = response.data;
+  axios.get(idURL + movieId + myKey)
+    .then((response) => {
+      console.log(response);
+      let movie = response.data;
 
-            let onscreen = `
+      let onscreen = `
               <div class = 'row'>
-                <div class = "col-md-4" >
+                <div class = "col-md-4">
                   <img src="${movie.Poster}" class="img-thumbnail" alt="Responsive image">
                 </div>
                 <div class = "col-md-8">
@@ -84,12 +84,12 @@ function getMovie() {
                 </div>
               </div>
       `;
-            $('#movie').html(onscreen);
+      $('#movie').html(onscreen);
 
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 
