@@ -55,7 +55,10 @@ function getMovies(searchText) {
     for(var i=0;i<years.length;i++){
       console.log(years[i]);
     }
+      chartData(years);
+     
     })
+    
     .catch((error) => {
       console.log(error);
     });
@@ -115,3 +118,128 @@ $(".toggle-icon").click(function() {
   $('#nav-container').toggleClass("pushed");
 });
 
+
+
+/******  Chart  ******/
+
+function chartData(years){
+
+  let chart=`
+  <canvas id="myChart" role="img"></canvsa>
+  `;
+  $('#Chart').html(chart);
+
+   var a=0; /* -1950 */
+   var b=0; /* 1951-1980 */
+   var c=0; /* 1981-1990 */
+   var d=0; /* 1991-2000 */
+   var e=0; /* 2001-2010 */
+   var f=0; /* 2011-2015 */
+   var g=0 /* 2016-2020*/
+ 
+   for(var i=0; i<years.length; i++){
+     if(years[i]<=1950){
+       a++;
+     }
+     if(years[i]<=1980 && years[i]>=1951){
+       b++;
+     }  
+     if(years[i]<=1990 && years[i]>=1981){
+       c++;
+     }
+     if(years[i]<=2000 && years[i]>=1991){
+       d++;
+     }
+     if(years[i]<=2010 && years[i]>=2001){
+       e++;
+     }
+     if(years[i]<=2015 && years[i]>=2011){
+       f++;
+     }
+     if(years[i]<=2020 && years[i]>=2016){
+      g++;
+    }
+   }
+
+  let data = {
+
+    labels: ['-1950','1951-1980','1981-1990','1991-2000','2001-2010','2011-2015','2016-2020'],
+    datasets: [{
+        label: '# of votes',
+        data: [a,b,c,d,e,f,g],
+        backgroundColor:[ 
+          'rgba(54, 162, 235, 0.8)',
+          'rgba(255, 206, 86, 0.8)',
+          'rgba(255, 99, 132, 0.8)',
+          'rgba(75, 192, 192, 0.8)',
+          'rgba(153, 102, 255, 0.8)',
+          'rgba(255, 159, 64, 0.8)',
+          'rgba(199, 199, 199, 0.8)',
+        ],
+        borderColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(255, 99, 132, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(199, 199, 199, 1)',
+        ],
+        borderWidth: 1
+    }]
+  }
+  var ctx = document.getElementById('myChart').getContext('2d');
+
+  var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: data,
+      response: true,
+
+      options:{
+        legend:{
+          display:true,
+          position: "bottom",
+          labels:{
+            data:['-1950','1951-1980','1981-1990','1991-2000','2001-2010','2011-2020']
+          }
+        },
+        
+        title:{
+          display: true,
+          text: 'Searched Movies Released Year BarChart',
+          fontSize: 20  
+        },
+        scales: {
+          
+          xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+              labelString: 'Released Year',
+            },
+            ticks:{
+              fontSize:16
+            }
+					}],
+					yAxes: [{
+            display: true,
+            gridLine: {
+              display:true,
+              color:"#FFFFFF",
+
+            },
+						scaleLabel: {
+							display: true,
+							labelString: 'Number of Movies'
+            },
+            ticks:{
+              fontSize:16
+            },
+            position: 'left',
+            
+					}]
+        }
+      }
+     });
+    
+}

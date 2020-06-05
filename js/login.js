@@ -1,4 +1,5 @@
-function checkInCorrect()      //check the username and password is empty or not
+ //check the username and password is empty or not
+function checkInCorrect()     
 {
     if (document.getElementById('username').value == "") {
         alert('Please enter username')
@@ -8,7 +9,7 @@ function checkInCorrect()      //check the username and password is empty or not
     if (document.getElementById('password').value == "") {
         alert('Please enter password')
         document.getElementById('password').focus();
-        return false
+        return false;
     }
     else {
         saveInfo();
@@ -16,9 +17,10 @@ function checkInCorrect()      //check the username and password is empty or not
     }
 }
 
+//Remember me check
 function saveInfo() {
     try {
-        var isSave = document.getElementById('remember_password').checked;   //保存按键是否选中
+        var isSave = document.getElementById('remember_password').checked;   
         if (isSave) {
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
@@ -35,6 +37,7 @@ function saveInfo() {
     }
 }
 
+// Cookie operations
 function SetCookie(username, password) {
     var Then = new Date();
     Then.setTime(Then.getTime() + 1866240000000);
@@ -47,9 +50,11 @@ function GetCookie() {
     var psd;
     var cookieString = new String(document.cookie);
     var cookieHeader = "username=";
+
     var beginPosition = cookieString.indexOf(cookieHeader);
     cookieString = cookieString.substring(beginPosition);
     var ends = cookieString.indexOf(";");
+
     if (ends != -1) {
         cookieString = cookieString.substring(0, ends);
     }
@@ -61,6 +66,7 @@ function GetCookie() {
             psd = nmpsd.substring(beginPosition + 2);
             document.getElementById('username').value = nm;
             document.getElementById('password').value = psd;
+
             if (nm != "" && psd != "") {
                 // document.forms[0].checkbox.checked = true;
                 document.getElementById('remember_password').checked = true;
@@ -69,47 +75,36 @@ function GetCookie() {
     }
 }
 
-
 function save() {
-    //存储session
+    // save session
     //window.sessionStorage.setItem("this_session", "This is session！");
     //window.sessionStorage.setItem("user", "This is User");
 
-    //取出session
+    //take out session
     //var thisSession = window.sessionStorage.getItem("this_session");
     //alert(thisSession);
   
-    clearUser();
-    clearCookie();
-
-}
-/*
-//关闭当前页
-function custom_close() {
-    if(confirm("您确定要关闭本页吗？")) {
-        window.opener = null;
-        window.open('', '_self');
-        window.close();
-        //清除session
-        localStorage.clear();
-        clearUser();
-        clearCookie();
-    } else {}
-}
-*/
-function clearUser() {
-    
-    localStorage.removeItem("user");
-
-}
-
-function clearCookie(){
+    localStorage.removeItem("user");    
     var date=new Date();
     date.setTime(date.getTime()-10000);
     var keys=document.cookie.match(/[^ =;]+(?=\=)/g);
     if (keys) {
         for (var i =  keys.length; i--;)
           document.cookie=keys[i]+"=0; expire="+date.toGMTString()+"; path=/";
-    }
+    } 
 }
+/*
+// Close current page
+function custom_close() {
+    if(confirm("Close this page?")) {
+        window.opener = null;
+        window.open('', '_self');
+        window.close();
+        // remove session
+        localStorage.clear();
+        clearUser();
+        clearCookie();
+    } else {}
+}
+*/
 

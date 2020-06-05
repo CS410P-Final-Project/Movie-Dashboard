@@ -1,3 +1,4 @@
+/* Add download font */
 @font-face{
     font-family:'starwar'; 
     src:url('../font/Starjhol.ttf')
@@ -6,6 +7,7 @@
     margin: 0;
     padding: 0;
 }
+
 body{
     background-image: url(../images/11814.png);
     background-repeat: no-repeat;
@@ -13,6 +15,8 @@ body{
     background-color: black;
     font-family: 'Roboto', sans-serif;
 }
+
+/******  TITLE: Let's go find movies  ******/
 .header{
     text-align: right;
     /*
@@ -25,6 +29,8 @@ body{
     font-weight:1000;
     font-size: 180%;
 }
+
+/******  Log in form  ******/
 .loginPage{
     height: 400px;
     width: 340px;  
@@ -35,6 +41,8 @@ body{
     top: 25%;
 	right: 10%;
 }
+
+/******  Username  ******/
 .loginPage input[type="text"]{
     width: 270px;
     height: 20px;
@@ -43,6 +51,8 @@ body{
     margin: 20px;
     margin-top: 30px;
 }
+
+/******  Password  ******/
 .loginPage input[type="password"]{
     width: 270px;
     height: 20px;
@@ -52,7 +62,7 @@ body{
     margin-top: 10px;
 }
 
-
+/******  Submit button  ******/
 .loginPage input[type="button"]{
     width: 200px;
 	height: 30px;
@@ -63,6 +73,11 @@ body{
     margin: 20px;
     margin-top: 30px;
     border-radius: 10px;
+}
+
+/******  Checkbox: remember me  ******/
+#remember{
+    color: #ffe81f;
 }
 
 @media screen and (max-width: 414px) {

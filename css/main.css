@@ -130,12 +130,8 @@ p{
     color:rgb(245, 3, 124);
 }
 
-
-
-
-
+/********** Quote Animation **********/
 .menu-list {
-   /* position: absolute;*/
 	list-style:none;
     width:0;
     height: 0;
