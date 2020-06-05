@@ -10,31 +10,41 @@
 </head>
 
 <body>
-
+<!-- Big Movie logo -->
     <div class="logo">
         <a href="./index.html" title="Back to home page">
             <h1>Movie</h1>
         </a>
     </div>
-
+<!-- Search text area -->>
     <div class="search">
         <form id = "searchForm" method="POST">
             <input type="text" class="form-control" id="searchText" placeholder=" Please enter movie name">
 
+        <!-- Return and go to movie's detial button -->
             <input type="submit" value="Go!" class="submit" href="#"> 
             <input type="submit" value="Back" class="submit" onclick="goBack()">
-            <script>
+           
+        <!-- Go back to main page for BACK button -->
+           <script>
                 function goBack() {
                     window.location = 'index.html';
                 }
             </script>
         </form>
+    </div>  
+    <br>
+
+<!-- Chart for searched movies's released year -->
+    <div id="Chart" style="margin-left:27%;
+                           margin-top: 40px; 
+                           height:450;
+                           width:600px"></div>
+    
+<!-- Search results -->
+    <div class="container">
+        <div id="movies" class="row"></div>
     </div>
-        <div class="container">
-            <div id="movies" class="row"></div>
-        </div>
-
-
   
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -42,6 +52,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/yifan.js"></script>
     <script src="../js/manageSearch.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 </body>
 </html>
