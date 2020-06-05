@@ -129,7 +129,7 @@ function chartData(years){
   `;
   $('#Chart').html(chart);
 
-  var a=0; /* -1950 */
+   var a=0; /* -1950 */
    var b=0; /* 1951-1980 */
    var c=0; /* 1981-1990 */
    var d=0; /* 1991-2000 */
@@ -163,10 +163,9 @@ function chartData(years){
 
   let data = {
 
-    labels: ['-1950','1951-1980','1981-1990','1991-2000','2001-2010','2011-2020'],
+    labels: ['-1950','1951-1980','1981-1990','1991-2000','2001-2010','2011-2015','2016-2020'],
     datasets: [{
-        label: 'Movies',
-
+        label: '# of votes',
         data: [a,b,c,d,e,f,g],
         backgroundColor:[ 
           'rgba(54, 162, 235, 0.8)',
@@ -188,14 +187,22 @@ function chartData(years){
         ],
         borderWidth: 1
     }]
-   }
-   var ctx = document.getElementById('myChart').getContext('2d');
-   var myChart = new Chart(ctx, {
-      type: 'bar',
+  }
+  var ctx = document.getElementById('myChart').getContext('2d');
+
+  var myChart = new Chart(ctx, {
+      type: 'doughnut',
       data: data,
       response: true,
 
       options:{
+        legend:{
+          display:true,
+          position: "bottom",
+          labels:{
+            data:['-1950','1951-1980','1981-1990','1991-2000','2001-2010','2011-2020']
+          }
+        },
         
         title:{
           display: true,
