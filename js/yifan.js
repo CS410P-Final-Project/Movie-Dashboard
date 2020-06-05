@@ -1,3 +1,6 @@
+
+var years=[];
+
 $(document).ready(() => {
   $('#searchForm').on('submit', (e) => {
     //console.log($('#searchText').val());
@@ -5,6 +8,11 @@ $(document).ready(() => {
     let searchText = $('#searchText').val();
 
     getMovies(searchText);
+    
+console.log("hello+++++++++++++++++++");
+    for(var i=0;i<years.length;i++){
+      console.log(years[i]);
+    }
     e.preventDefault();
   })
 });
@@ -27,8 +35,11 @@ function getMovies(searchText) {
     .then((response) => {
       console.log(response);
       let movies = response.data.Search;
+      var years=[];
+      //result that contain object that fetched
       let results = ' ';
       $.each(movies, (index, movie) => {
+        years.push(movie.Year);
         results += `
             <div class="col-md-3">
               <div class="well text-center">
@@ -40,6 +51,10 @@ function getMovies(searchText) {
           `;
       });
       $('#movies').html(results);
+     //years 
+    for(var i=0;i<years.length;i++){
+      console.log(years[i]);
+    }
     })
     .catch((error) => {
       console.log(error);
@@ -99,3 +114,4 @@ function getMovie() {
 $(".toggle-icon").click(function() {
   $('#nav-container').toggleClass("pushed");
 });
+
