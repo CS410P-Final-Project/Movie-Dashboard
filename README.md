@@ -1,9 +1,13 @@
 # Movie-Dashboard
 
 Using the javascript, HTML and CSS to build a movie dashboard application.
+
 Using the bootstrap library to achieve the responsive. 
+
 Using the Axios library to access the API data.
+
 Using Chart.js library to create a chart object.
+
 API: OMDB API.
 
 all the java script code is in the js folder. 
