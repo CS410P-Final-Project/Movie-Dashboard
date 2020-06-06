@@ -1,7 +1,6 @@
 # Movie-Dashboard
 
 Using the javascript, HTML and CSS to build a movie dashboard application.
-
 Using the bootstrap library to achieve the responsive. 
 
 Using the Axios library to access the API data.
